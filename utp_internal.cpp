@@ -154,9 +154,11 @@ enum {
 	ST_NUM_STATES,		// used for bounds checking
 };
 
+#if UTP_DEBUG_LOGGING
 static const cstr flagnames[] = {
 	"ST_DATA","ST_FIN","ST_STATE","ST_RESET","ST_SYN"
 };
+#endif
 
 enum CONN_STATE {
 	CS_UNINITIALIZED = 0,
@@ -169,9 +171,11 @@ enum CONN_STATE {
 	CS_DESTROY
 };
 
+#if UTP_DEBUG_LOGGING
 static const cstr statenames[] = {
 	"UNINITIALIZED", "IDLE","SYN_SENT", "SYN_RECV", "CONNECTED","CONNECTED_FULL","DESTROY_DELAY","RESET","DESTROY"
 };
+#endif
 
 struct OutgoingPacket {
 	size_t length;
